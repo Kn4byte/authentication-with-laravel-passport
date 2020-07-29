@@ -21,6 +21,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/test', function () {
-    return view('test');
-})->middleware('auth');
+
+Route::group(['middleware' => ['auth']], function () {    
+    Route::get('/test', function () {
+        return view('test');
+    });
+});
+
+
