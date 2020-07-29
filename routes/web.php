@@ -23,4 +23,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/test', ['middleware' => 'auth'], function () {
     return view('test');
-);
+});
